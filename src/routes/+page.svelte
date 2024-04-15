@@ -1,7 +1,7 @@
 <script lang="ts">
 	import init, { add } from '../../rustlib/pkg'
-	const n1 = 10
-	const n2 = 7
+	const n1 = Math.trunc(Math.random()*10)
+	const n2 = Math.trunc(Math.random()*10)
 </script>
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-20">
