@@ -1,30 +1,34 @@
-// Gary Herrit 4 April 2024
-// using VS Code on Windows 11 laptop
-//
-// Prerequisites - install if needed (version used here)
-// npm (version 9.8.1)
-// rustup (version 1.77.1)
-// wasm-pack (version 0.12.1)
+# Gary Herrit 4 April 2024
 
-// Step (1)
-// Start a new sveltekit/skeleton project
-// https://www.skeleton.dev/docs/get-started
-// create a bare bones sveltekit-skeleton project
-// we will call this aaWasm
-npm create skeleton-app@latest aRustAdd
+### using VS Code on Windows 11 laptop
 
-// Step (2)
-// generate starter rust project
-cargo new rustlib --lib
+### Prerequisites - install if needed (version used here)
 
-// Step (3)
-// change to rust folder and
-// add wasm-bindgen dependency
-cd rustlib
-cargo add wasm-bindgen
+- npm (version 9.8.1)
+- rustup (version 1.77.1)
+- wasm-pack (version 0.12.1)
 
-// Step (4)
-// in cargo.toml file add the following:
+### Step (1)
+
+Start a new sveltekit/skeleton project
+https://www.skeleton.dev/docs/get-started
+create a bare bones sveltekit-skeleton project we will call this aaWasm
+**npm create skeleton-app@latest aRustAdd**
+
+### Step (2)
+
+generate starter rust project
+**cargo new rustlib --lib**
+
+### Step (3)
+
+change to rust folder and add wasm-bindgen dependency
+**cd rustlib**
+**cargo add wasm-bindgen**
+
+### Step (4)
+
+in cargo.toml file add the following:
 [lib]
 crate-type = ["cdylib"]
 
