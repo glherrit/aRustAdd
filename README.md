@@ -14,7 +14,7 @@
 
 Start a new sveltekit/skeleton project
 https://www.skeleton.dev/docs/get-started
-create a bare bones sveltekit-skeleton project we will call this aaWasm
+create a bare bones sveltekit-skeleton project we will call this aRustAdd
 
 ```
 npm create skeleton-app@latest aRustAdd
@@ -39,7 +39,7 @@ cargo add wasm-bindgen
 
 ### Step (4)
 
-In the <span style="color:yellow;">cargo.toml</span> file add the following:
+In the `cargo.toml` file add the following:
 
 ```
 [lib]
@@ -48,7 +48,7 @@ crate-type = ["cdylib"]
 
 ### Step (5)
 
-Modify the rust file, <span style="color:yellow;">lib.rs</span>, by adding this line at the top to allow communication to rust library using wasm-bindgen. We will use the example add function already coded in the file for this demo. The file should look like this:
+Modify the rust file, `lib.rs`, by adding this line at the top to allow communication to rust library using wasm-bindgen. We will use the example add function already coded in the file for this demo. The file should look like this:
 
 ```
 use wasm_bindgen::prelude::\*;
@@ -61,7 +61,7 @@ pub fn add(left: usize, right: usize) -> usize {
 
 ### Step (6)
 
-manually compile the rust library
+Manually compile the rust library. You'll need to be in the `rustlib` folder to do this.
 
 ```
 wasm-pack build --target web
@@ -69,7 +69,7 @@ wasm-pack build --target web
 
 ### Step (7)
 
-Modify the <span style="color:yellow;">vite.config.ts</span> file to allow Vite to serve the rust library files. Note that the fs server will provide vite with access to the rust library
+Modify the `vite.config.ts` file to allow Vite to serve the rust library files. Note that the fs server will provide vite with access to the rust library
 
 ```
 import { purgeCss } from vite-plugin-tailwind-purgecss';
@@ -88,7 +88,7 @@ export default defineConfig({
 
 ### Step (8)
 
-Add code to the top <span style="color:yellow;">+page.svelte</span> import rust add function at top of file and generate two math integer numbers
+Add code to the top `+page.svelte` to import rust add function and generate two math integer numbers. I used typescript here.
 
 ```
 <script lang="ts">
@@ -100,9 +100,9 @@ Add code to the top <span style="color:yellow;">+page.svelte</span> import rust 
 
 ### Step (9)
 
-Also add HTML code to call add function and display results in <span style="color:yellow;">+page.svelte</span>.
+Also add HTML code at bottom of `+page.svelte` to call add function and display results.
 
-```
+````
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-20">
 		<h1 class="h1">Let's Get Rust and Wasm Working!</h1>
@@ -110,11 +110,11 @@ Also add HTML code to call add function and display results in <span style="colo
 			loading wasm bundle...
 			<!-- dont need any of what init returns -->
 		{:then _module}
-			<h1 class="h1"><span>rust/wasm add: {n1} + {n2} = {add(n1, n2)}</span></h1>
+			<h1 class="h1"><span>rust/wasm add: {n1} + {n2} = {add(n1, n2)}```</h1>
 		{/await}
 	</div>
 </div>
-```
+````
 
 ### Step (10)
 
@@ -124,7 +124,7 @@ time to test the program
 npm run dev
 ```
 
-### ====== Some Extra Information
+### ====== Some Extra Information About Rust
 
 Install rust using the rustup installation
 https://www.rust-lang.org/tools/install
