@@ -13,41 +13,49 @@
 Start a new sveltekit/skeleton project
 https://www.skeleton.dev/docs/get-started
 create a bare bones sveltekit-skeleton project we will call this aaWasm
+
 **npm create skeleton-app@latest aRustAdd**
 
 ### Step (2)
 
 generate starter rust project
+
 **cargo new rustlib --lib**
 
 ### Step (3)
 
 change to rust folder and add wasm-bindgen dependency
+
 **cd rustlib**
 **cargo add wasm-bindgen**
 
 ### Step (4)
 
 in cargo.toml file add the following:
-[lib]
-crate-type = ["cdylib"]
 
-// Step (5)
-// modify the rust file, lib.rs
-// Add this line to top to allow
-// communication to rust library using wasm-bindgen
-// use the example add function for this purpose
-// the file should look like this:
-use wasm_bindgen::prelude::\*;
+**[lib]**
+**crate-type = ["cdylib"]**
+
+### Step (5)
+
+modify the rust file, lib.rs
+Add this line to top to allow
+communication to rust library using wasm-bindgen
+use the example add function for this purpose
+the file should look like this:
+
+**use wasm_bindgen::prelude::\*;**
 
 #[wasm_bindgen]
 pub fn add(left: usize, right: usize) -> usize {
 left + right
 }
 
-// Step (6)
-// manually compile the rust library
-wasm-pack build --target web
+### Step (6)
+
+manually compile the rust library
+
+**wasm-pack build --target web**
 
 // Step (7)
 // Modify the vite.config.ts file to allow
