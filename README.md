@@ -1,4 +1,6 @@
-# Gary Herrit, 15 April 2024
+# aRustAdd - Sveltekit & Wasm-Pack & Rust
+
+### Gary Herrit, 15 April 2024
 
 ### using VS Code on Windows 11 laptop
 
